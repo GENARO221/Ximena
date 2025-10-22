@@ -1,0 +1,166 @@
+body {
+  background-color: pink;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  padding-top: 40px; /* 🔼 antes estaba 80px, ahora menos para subirlo */
+}
+
+h1 {
+  color: white;
+  text-shadow: 2px 2px 8px hotpink;
+  font-size: 2rem;
+  margin-top: 0;
+}
+
+img {
+  width: 100px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(255, 20, 147, 0.6);
+  margin-top: 10px;
+}
+
+.mensaje {
+  position: absolute;
+  bottom: 300px; /* 🔼 antes era 20px */
+  left: 40px; /* un poquito más hacia adentro */
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  padding: 15px 20px;
+  max-width: 400px;
+  box-shadow: 0 0 10px rgba(255, 105, 180, 0.4);
+}
+
+
+.foto {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 15px;
+  box-shadow: 0 0 8px rgba(255, 20, 147, 0.5);
+}
+
+.mensaje p {
+  color: white;
+  font-size: 0.9rem;
+  text-shadow: 1px 1px 4px hotpink;
+}
+
+.mensaje-derecha {
+  position: absolute;
+  bottom: 60px; /* misma altura que el otro */
+  right: 20px;
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  padding: 15px 20px;
+  max-width: 400px;
+  box-shadow: 0 0 10px rgba(255, 105, 180, 0.4);
+}
+
+.mensaje-derecha .foto {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-right: 15px;
+  object-fit: cover;
+}
+
+.mensaje-derecha p {
+  color: white;
+  font-size: 16px;
+  font-family: 'Comic Sans MS', cursive;
+  text-shadow: 1px 1px 3px #ff69b4;
+}
+
+.mensaje-abajo {
+  position: absolute;
+  bottom: 5px; /* parte inferior */
+  left: 40px;
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  padding: 15px 20px;
+  max-width: 450px;
+  box-shadow: 0 0 10px rgba(255, 105, 180, 0.4);
+  opacity: 0; /* Oculto al inicio */
+  transform: translateY(30px); /* Aparece desde abajo */
+  animation: aparecerSuave 1.5s ease-out forwards; /* Animación */
+}
+
+.mensaje-abajo .foto {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-right: 15px;
+  object-fit: cover;
+}
+
+.mensaje-abajo p {
+  color: white;
+  font-size: 16px;
+  font-family: 'Comic Sans MS', cursive;
+  text-shadow: 1px 1px 3px #ff69b4;
+}
+
+/* 🌸 Animación */
+@keyframes aparecerSuave {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.corazones {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.corazones span {
+  position: absolute;
+  font-size: 30px;
+  animation: flotar 5s ease-in-out infinite;
+  opacity: 0.8;
+}
+
+.corazones span:nth-child(1) { animation-delay: 0s; left: -40px; }
+.corazones span:nth-child(2) { animation-delay: 1s; left: 0px; }
+.corazones span:nth-child(3) { animation-delay: 2s; left: 40px; }
+.corazones span:nth-child(4) { animation-delay: 3s; left: -20px; }
+.corazones span:nth-child(5) { animation-delay: 4s; left: 20px; }
+
+@keyframes flotar {
+  0% { transform: translateY(0); opacity: 0.8; }
+  50% { transform: translateY(-20px); opacity: 1; }
+  100% { transform: translateY(0); opacity: 0.8; }
+}
+
+.frase-romantica {
+  position: absolute;
+  bottom: 450px;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-family: 'Comic Sans MS', cursive;
+  font-size: 22px;
+  text-shadow: 2px 2px 6px #ff69b4;
+  opacity: 0;
+  animation: aparecerSuave 2s ease-in-out forwards;
+}
+
+body {
+  background: radial-gradient(circle at center, #ffc6d9 0%, #ffb6c1 50%, #fbb1d3 100%);
+}
